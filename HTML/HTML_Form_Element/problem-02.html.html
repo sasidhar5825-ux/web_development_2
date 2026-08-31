@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)http://127.0.0.1:5500/HTML/HTML_Form_Element/problem-02.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Clinic Appointment</title>
+</head>
+<body>
+  <h1>Clinic Appointment Booking</h1>
+  <p>Fill this form to book an appointment.</p>
+
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required=""><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required=""><br><br>
+
+    <label for="mobile">Mobile:</label>
+    <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required=""><br><br>
+
+    <label for="dob">DOB:</label>
+    <input type="date" id="dob" name="dob" required=""><br><br>
+
+    <label for="date">Appointment Date:</label>
+    <input type="date" id="date" name="date" required=""><br><br>
+
+    <label for="time">Time:</label>
+    <input type="time" id="time" name="time" required=""><br><br>
+
+    <label for="doctor">Doctor:</label>
+    <select id="doctor" name="doctor" required="">
+      <option value="" disabled="" selected="">Select</option>
+      <option>Dr. Smith</option>
+      <option>Dr. Jones</option>
+      <option>Dr. Brown</option>
+      <option>Dr. White</option>
+      <option>Dr. Green</option>
+    </select><br><br>
+
+    <p>Visit Type:</p>
+    <input type="radio" id="new" name="visit" value="new" required="">
+    <label for="new">New</label>
+    <input type="radio" id="follow" name="visit" value="follow">
+    <label for="follow">Follow-up</label>
+    <input type="radio" id="consult" name="visit" value="consult">
+    <label for="consult">Consultation</label>
+    <input type="radio" id="emergency" name="visit" value="emergency">
+    <label for="emergency">Emergency</label><br><br>
+
+    <label for="reason">Reason:</label><br>
+    <textarea id="reason" name="reason"></textarea><br><br>
+
+    <input type="checkbox" id="terms" name="terms" required="">
+    <label for="terms">Accept terms</label><br><br>
+
+    <input type="submit" value="Book">
+    <input type="reset" value="Reset">
+  </form>
+
+  <h2>Clinic Timings</h2>
+  <table border="1">
+    <tbody><tr><th>Day</th><th>Time</th></tr>
+    <tr><td>Mon-Fri</td><td>9am-6pm</td></tr>
+    <tr><td>Sat</td><td>10am-4pm</td></tr>
+    <tr><td>Sun</td><td>Closed</td></tr>
+  </tbody></table>
+
+  <p>Emergency? 
+    <a href="https://clinic.example.com/contact">Contact us</a></p>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
